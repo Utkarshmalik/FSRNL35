@@ -10,15 +10,32 @@
     <style>
 
         .box{
-            margin: 3px;
-            height: 100px;
-            width: 100px;
-
-            background-color: red;
-            border:3px solid green;
-            padding:2px;
-
             box-sizing: border-box;
+            border:3px solid red;
+            margin:20px;
+        }
+
+        .block{
+            display: block;
+            height: 300px;
+            width: 600px;
+        }
+
+        .inline{
+            display: inline;
+            height: 400px;
+            width: 500px;
+            margin-top: 1000px;
+            margin-bottom: 1000px;
+        }
+
+        .inlineBlock{
+            display: inline-block;
+            border:3px solid gold;
+        }
+
+        .hidden{
+            display: none;
         }
 
     </style>
@@ -26,9 +43,22 @@
 </head>
 <body>
 
-    <div class="box">
-
+    <div class="box block">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, neque provident odio nemo alias tempore. Distinctio dicta vero nisi similique adipisci, maxime aut tempora porro ipsam! Adipisci quod provident quibusdam, reiciendis numquam, harum distinctio amet consectetur, nisi ea mollitia veritatis? Voluptatibus esse excepturi, earum sint, illo quod vitae molestias modi cum, soluta commodi fugit mollitia nostrum perspiciatis minima blanditiis nisi voluptatem ratione est! Rerum omnis impedit obcaecati sapiente hic ea minus aspernatur qui. Mollitia distinctio expedita incidunt veniam impedit laboriosam. Delectus beatae dolore, provident sit quaerat dignissimos! Voluptas expedita harum possimus sequi fugit, aperiam eum deserunt eveniet exercitationem, cum vel!
     </div>
-   
+
+    <div class="box inline">
+        ipsam, debitis fuga porro?
+    </div>
+
+   <div class="box inlineBlock">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quibusdam magnam laudantium ipsa autem pariatur, dolorum provident excepturi repudiandae sit neque. Autem vero et magnam maiores ab recusandae consectetur quia!
+   </div>
+
+<div class="box hidden">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quibusdam magnam laudantium ipsa autem pariatur,
+    dolorum provident excepturi repudiandae sit neque. Autem vero et magnam maiores ab recusandae consectetur quia!
+</div>
+
 </body>
 </html>
