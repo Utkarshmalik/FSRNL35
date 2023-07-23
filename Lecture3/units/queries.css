@@ -1,0 +1,40 @@
+/* 1400 - 2000px */
+@media only screen and (max-width:2000px) {
+
+    html{
+        background-color: aqua;
+        font-size: 25px;
+    }
+}
+
+/* 1100 - 1400px */
+@media only screen and (max-width:1400px) {
+
+    html {
+            background-color: brown;
+            font-size: 20px;
+        }
+
+}
+
+/* 900 - 1100px */
+@media only screen and (max-width:1100px) {
+
+    html {
+            background-color: hotpink;
+            font-size: 15px;
+        }
+
+   
+}
+
+/* 0 - 900px */
+@media only screen and (max-width:900px) {
+
+
+    html {
+            background-color: gold;
+            font-size: 12px;
+        }
+
+}
