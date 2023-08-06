@@ -72,29 +72,6 @@
 // })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // getUsers().then((users)=>{
 //     const user = users.find( (user)=>{ return user.name===requiredName});
 //     console.log(user);

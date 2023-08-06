@@ -35,12 +35,11 @@
 
 
 
-const div = document.createElement('div');
-const p = document.createElement('p');
-p.textContent = 'Hello , Learning MERN stack';
-div.appendChild(p);
-
-document.body.appendChild(div);
+// const div = document.createElement('div');
+// const p = document.createElement('p');
+// p.textContent = 'Hello , Learning MERN stack';
+// div.appendChild(p);
+// document.body.appendChild(div);
 
 
 

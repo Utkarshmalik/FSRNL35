@@ -33,10 +33,3 @@ const createPost=(postData)=>{
     return div;
 
 }
-
-
-
-{/* <div class="post">
-<h3> Learning Promises </h3>
-<p>Promises is a great way to handle async code </p>
-</div> */}
