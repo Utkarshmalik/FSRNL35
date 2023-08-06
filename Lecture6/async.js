@@ -101,17 +101,17 @@
 
 
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-.then((res)=>{
-    return res.json()
-})
-.then((data)=>{
-    console.log(data);
-    throw new Error("some error");
-})
-.catch((err)=>{
-    console.log("promise is rejected with err ",err)
-})
+// fetch("https://jsonplaceholder.typicode.com/posts")
+// .then((res)=>{
+//     return res.json()
+// })
+// .then((data)=>{
+//     console.log(data);
+//     throw new Error("some error");
+// })
+// .catch((err)=>{
+//     console.log("promise is rejected with err ",err)
+// })
 
 
 

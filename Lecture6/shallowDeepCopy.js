@@ -65,12 +65,13 @@ let person = {
 // console.log(person2);
 
 
+//deep copy 
 
-let personString = JSON.stringify(person);
-let person2=JSON.parse(personString);
+// let personString = JSON.stringify(person);
+// let person2=JSON.parse(personString);
 
-person2.firstName="Rahul";
-person2.address.street="South 2nd street"
+// person2.firstName="Rahul";
+// person2.address.street="South 2nd street"
 
-console.log(person);
-console.log(person2);
+// console.log(person);
+// console.log(person2);

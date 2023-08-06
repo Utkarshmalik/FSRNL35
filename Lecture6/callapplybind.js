@@ -29,25 +29,23 @@
 
 
 
-let cap = {
-    name: "Steve",
-    team: "Cap",
-    petersTeam: function (mem1, mem2, ...otherMem) {
-        console.log(`Hey ${this.name} I am your neighborhood's  spiderman and i belong to ${this.team}'s team`);
-        console.log(`I am working with ${mem1} & ${mem2} with ${otherMem}`);
-    }
-}
+// let cap = {
+//     name: "Steve",
+//     team: "Cap",
+//     petersTeam: function (mem1, mem2, ...otherMem) {
+//         console.log(`Hey ${this.name} I am your neighborhood's  spiderman and i belong to ${this.team}'s team`);
+//         console.log(`I am working with ${mem1} & ${mem2} with ${otherMem}`);
+//     }
+// }
 
-let ironMan = {
-    name: "Tony",
-    team: "Iron Man"
-}
+// let ironMan = {
+//     name: "Tony",
+//     team: "Iron Man"
+// }
 
- const anotherFn = cap.petersTeam.bind(ironMan);
+//  const anotherFn = cap.petersTeam.bind(ironMan);
 
 
- //10000 years later 
+//  //10000 years later
 
- 
-
- anotherFn("utkarsh","rahul","jay");
+//  anotherFn("utkarsh","rahul","jay");
