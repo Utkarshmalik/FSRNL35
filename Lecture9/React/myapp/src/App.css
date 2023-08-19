@@ -1,0 +1,8 @@
+.user{
+  border:3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+}
