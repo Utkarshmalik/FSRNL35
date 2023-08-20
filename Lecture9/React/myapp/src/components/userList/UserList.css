@@ -1,0 +1,12 @@
+.logout{
+    display: inline-block;
+   position: fixed;
+   right: 0px;
+   top:0px;
+}
+
+
+
+.usersPage{
+    text-align: center;
+}

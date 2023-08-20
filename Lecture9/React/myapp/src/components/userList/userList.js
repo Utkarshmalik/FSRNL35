@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import User from "../User/User";
+import "./UserList.css";
 
-const users=[
+const usersData=[
   {
     "id": 1,
     "name": "Leanne Graham",
@@ -233,16 +235,52 @@ const users=[
   }
 ];
 
+const fetchUsers=()=>{
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve(usersData);
+    },2000)
+  })
+}
 
 function UserList(props){
 
-    console.log(props.language);
+  console.log("rendering user list component")
+
+  const [isDataAvailable, changeIsDataAvailable] = useState(false);
+  const [users, setUsers]  = useState(null);
+
+    useEffect(()=>{
+      console.log("inside use effect");
+      fetchUsers()
+      .then(data=>{
+        changeIsDataAvailable(true);
+        setUsers(data);
+      })
+    },[]);
+    
+
+  function showUsers(){
+
     return <div className="users">
-        {
+       {
             users.map((user)=>{
                 return <User  userData={user} />
             })
         }
+    </div>
+  }
+
+  function showLoader(){
+    return <h4 > Fetching data for you from the backend ... </h4>
+  }
+
+    return <div className="usersPage"> 
+      <button className="logout" onClick={props.onLogout} > Logout </button>
+
+      {
+         (isDataAvailable) ? showUsers() : showLoader()
+      }
 
     </div>
 
