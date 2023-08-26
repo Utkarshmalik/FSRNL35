@@ -1,0 +1,704 @@
+{
+	"info": {
+		"_postman_id": "8cbd9aee-c3e9-45ab-a61b-1d4b8bd6a3df",
+		"name": "mba_backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Create a new Movie ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"The Kashmir Files\",\n  \"description\": \"Intense Movie\",\n  \"casts\": [\n    \"Mithun Chakraborty\",\n    \"Anupam Kher\"\n  ],\n  \"director\": \"Vivek Agnihotri\",\n  \"trailerUrl\": \"http://TheKashmirFiles/trailers/1\",\n  \"posterUrl\": \"http://TheKashmirFiles/posters/1\",\n  \"language\": \"Hindi\",\n  \"releaseDate\": \"11-03-2022\",\n  \"releaseSatus\": \"TEMP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/movies",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InV0bWFsaWsiLCJpYXQiOjE2ODcwMTAxNjQsImV4cCI6MTY4NzEzMDE2NH0.XSMNthZtv2K-TgyAOxrYkQPlQ3TdpijDczWpLOs6tEs",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/movies",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/movies/63cb8ca6dc1226571558ddba",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"movies",
+								"63cb8ca6dc1226571558ddba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/movies/63cb8c67dc1226571558ddb8",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"movies",
+								"63cb8c67dc1226571558ddb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"releaseStatus\":\"BLOCKED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/movies/63cb8ca6dc1226571558ddba",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"movies",
+								"63cb8ca6dc1226571558ddba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all theatres for a movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/movies/63cb8cb6dc1226571558ddbc/theatres",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"movies",
+								"63cb8cb6dc1226571558ddbc",
+								"theatres"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Theatres",
+			"item": [
+				{
+					"name": "Create a new Theatre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Sonmarg Theatre\",\n  \"city\": \"Pune\",\n  \"description\": \"Economical theatre\",\n  \"pinCode\": 411042\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/theatres",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"theatres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Theatre by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/theatres/",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"theatres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Theatres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/theatres/",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"theatres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Theatre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/theatres/63cea3291628d3f158bed38b",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"theatres",
+								"63cea3291628d3f158bed38b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"utkarsh\",\n    \"userId\":\"utmalik\",\n    \"email\":\"client@gmail.com\",\n    \"password\":\"qwerty123\",\n    \"userType\":\"CLIENT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/auth/signup",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign IN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"utmalik\",\n    \"password\":\"qwerty123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/auth/signin",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in as. customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/auth/signin",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in as client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/auth/signin",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in as Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mbaendpoint}}/mba/api/v1/auth/signin",
+							"host": [
+								"{{mbaendpoint}}"
+							],
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "All Movie Booking APIs"
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Approve admin user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJhaHVsMTIzIiwiaWF0IjoxNjc0ODg2MjEzLCJleHAiOjE2NzQ4ODYzMzN9.S2FB8n_iyPcgszwTIziZdNR6JDvuq7H1olV0wUddqiI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userStatus\":\"APPROVED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/users/utmalik",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"users",
+								"utmalik"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Create a new Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJhaHVsMTIzIiwiaWF0IjoxNjc1MDk2MDUyLCJleHAiOjE2NzUwOTYxNzJ9.US5Yp9flY-o_FTpmG6b4XzOS3j1P8TXAuIa9yXIGZl4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movieId\":\"63cb990eb024d44142601cb1\",\n    \"theatreId\":\"63ceaf45049aab346df63312\",\n    \"noOfSeats\":5,\n    \"timing\":\"Evening\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/bookings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"bookings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Booking By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJhaHVsMTIzIiwiaWF0IjoxNjc1MDk2NTEwLCJleHAiOjE2NzUyMTY1MTB9.yLmhZRkQLhyqrgCUakQ9PQe94t3Eu_27_0PUw_v6cN4",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/bookings/63d7f1d6e28cf24e2460ee9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"bookings",
+								"63d7f1d6e28cf24e2460ee9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InV0bWFsaWsiLCJpYXQiOjE2NzU0MzcxNDQsImV4cCI6MTY3NTU1NzE0NH0.p0i11b3T2TsH15l23gtssPGca1BkOIOTS8x-24jlIWY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"timing\": \"Night\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/bookings/63d7f1d6e28cf24e2460ee9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"bookings",
+								"63d7f1d6e28cf24e2460ee9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkbWluIiwiaWF0IjoxNjg2MzczNzg0LCJleHAiOjE2ODY0OTM3ODR9.fIY_gJ8NI0-chVv3U5cQ8hoRzPrvVLgW7ZdztVcyxBk",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/bookings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"bookings",
+								""
+							],
+							"query": [
+								{
+									"key": "x-access-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InV0dGFtMTIzIiwiaWF0IjoxNjg2MzczNDY1LCJleHAiOjE2ODY0OTM0NjV9.7w7MrBMe-7XBSqjI62pb-4UiNKTJu3mPGArBwVtT5qk",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Create a new payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJhaHVsMTIzIiwiaWF0IjoxNjc1NDg2NzcxLCJleHAiOjE2NzU2MDY3NzF9.d-fXLroS9UvQAATCAHD8qrIluhw49su0fHFrR8aeeCE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookingId\":\"63dde69503177761c442976a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InV0bWFsaWsiLCJpYXQiOjE2NzU0OTA1NjQsImV4cCI6MTY3NTYxMDU2NH0.Q2DAJTtwAK1_Qs1K3sE93PjNC5A15cI3sL7bV-Eh_JU",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Payment by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyYWRoeWEiLCJpYXQiOjE2NzU0OTIxOTIsImV4cCI6MTY3NTYxMjE5Mn0.KPBCSzO2Pgjr1x5RsC_NAewpa4qzdrw-hHewrlC17PU",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/mba/api/v1/payments/63ddea4f49b46f2d3aef9fa4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mba",
+								"api",
+								"v1",
+								"payments",
+								"63ddea4f49b46f2d3aef9fa4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
