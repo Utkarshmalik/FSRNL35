@@ -7,10 +7,14 @@ import { useNavigate } from 'react-router-dom';
 function Header() {
 
     const navigate = useNavigate();
+    const isAdmin = localStorage.getItem("userTypes")==="ADMIN";
 
     const onLogout=()=>{
         localStorage.clear();
         navigate("/login");
+    }
+    const onCreateMovie=()=>{
+      navigate("/movies/create");
     }
 
   return (
@@ -24,7 +28,10 @@ function Header() {
             <Nav.Link href="#pricing">Events</Nav.Link>
           </Nav>
         </Container>
+        {isAdmin && 
+                <Button className='mx-4' onClick={onCreateMovie} variant='light'>  Create Movie  </Button>
 
+        }
         <Button onClick={onLogout} variant='light'>  Logout </Button>
       </Navbar>
     </>
