@@ -1,13 +1,17 @@
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAllMovies } from "../api/movie"
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../App";
 
 const useLandingPageLogic=()=>{
 
+       const {theme} = useContext(ThemeContext);
+    const isDarkTheme = theme==="dark";
+
     const [isLoading, changeIsLoading] = useState(true);
 
-    const [movieData, setMovieData] = useState(null);
+    const [movieData, setMovieData] = useState([]);
     
     const navigate=useNavigate();
 
@@ -16,8 +20,18 @@ const useLandingPageLogic=()=>{
         changeIsLoading(false);
         setMovieData(response.data);
     }
+
+    //componentDidMount 
+    //componentDidUpdate 
+    //componentWillUnMount
+
+
     useEffect(()=>{
         fetchMovies();
+
+        return ()=>{
+        }
+
     },[]);
 
 
@@ -31,7 +45,7 @@ const useLandingPageLogic=()=>{
             {
                 movieData.map((movie)=>{
 
-                   return  <div onClick={()=>onMovieClick(movie._id)} className="border border-light border-5 m-2 p-2 movie">
+                   return  <div onClick={()=>onMovieClick(movie._id)} className= {((isDarkTheme)?"border-light":"border-dark") + " border border-5 m-2 p-2 movie"}>
                         <div className="d-flex flex-column justify-content-center align-items-center ">
 
                             <img src={movie.posterUrl} style={{height:"200px"}} />

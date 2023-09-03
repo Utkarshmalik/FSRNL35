@@ -3,10 +3,14 @@ import Spinner from "../../Components/common/Spinner/Spinner";
 import ReactPlayer from "react-player";
 import "./MovieDetail.css";
 import { useMovieDetailHook } from "../../Hooks/useMovieDetailHook";
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 function MovieDetail(){ 
 
     const {isLoading, movieDetails} = useMovieDetailHook();
+       const  {theme} = useContext(ThemeContext);
+    const isDarkTheme = theme==="dark";
 
     return <div>
 
@@ -15,7 +19,7 @@ function MovieDetail(){
         <div>
             {(isLoading) ? <Spinner/> : <div className="bg-light">
 
-                    <div className="bg-black box">
+                    <div className={((isDarkTheme)?"bg-black":"bg-light")+ " box"}>
                         <ReactPlayer url={movieDetails.trailerUrl} controls={true} className="video" width="70%" height="100%" />
                     </div>
                     <hr/>

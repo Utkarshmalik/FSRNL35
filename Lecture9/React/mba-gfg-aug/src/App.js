@@ -6,10 +6,19 @@ import MovieDetail from './pages/MovieDetail/MovieDetail';
 import AuthHoc from './HOC/AuthHOC';
 import MovieCreatePage from './pages/MovieCreation/MovieCreatePage';
 import PageNotFound from './Components/common/PageNotFound/PageNotFound';
+import { createContext, useState } from 'react';
+
+
+export const ThemeContext = createContext();
 
 function App() {
-  return <Router>
 
+  const [theme, changeTheme] = useState("light");
+
+
+  return <div>
+    <ThemeContext.Provider value={{theme, changeTheme}} >
+  <Router>
     <Routes>
           <Route path="/login" element={<Login/>} />
           <Route exact path="/" element={<AuthHoc id="landingPage"><LandingPage/></AuthHoc> }  />
@@ -17,10 +26,11 @@ function App() {
           <Route  path="/movies/create" element={<AuthHoc id="createMovie"><MovieCreatePage/></AuthHoc>}  />
           <Route  path="/*" element={<PageNotFound/>}  />
     </Routes>
-     
+        </Router>
+      </ThemeContext.Provider>
+     </div>
 
 
-    </Router>
 }
 
 export default App;
