@@ -1,3 +1,4 @@
+const { SECRET } = require("../../configs/auth.config");
 const User = require("../Models/user.model");
 const { userTypes,  userStatus} = require("../utils/constants");
 const bcrypt = require("bcrypt");
@@ -44,7 +45,7 @@ exports.signIn = async (req,res)=>{
         return res.status(400).send({message:"Password passed is invalid"});
     }
 
-    var token = jwt.sign({userId:user.userId}, 'test123', { expiresIn: '1h' });
+    var token = jwt.sign({userId:user.userId}, SECRET, { expiresIn: '1h' });
 
 
     return res.send({

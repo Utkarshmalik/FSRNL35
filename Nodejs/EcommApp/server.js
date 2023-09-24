@@ -1,13 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+require('dotenv').config()
+const { DB_URL } = require("./configs/db.config");
+const { PORT } = require("./configs/server.config");
 
 
 const app = express();
 
-const dbURL= "mongodb+srv://utmalik:qwerty123@cluster0.mzc2yil.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(dbURL)
+
+mongoose.connect(DB_URL)
 .then(()=>{
     console.log("Successfully connected to the database");
 })
@@ -24,6 +27,6 @@ require("./src/Routes/product.routes")(app);
 require("./src/Routes/auth.routes")(app);
 
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log(`Your application is running on port 3000`);
 })

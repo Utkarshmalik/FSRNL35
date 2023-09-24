@@ -1,3 +1,4 @@
+const Cart = require("../Models/cart.model");
 const Product = require("../Models/product.model");
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
@@ -149,3 +150,89 @@ exports.deleteProduct=async (req,res)=>{
     }
 
 }
+
+
+exports.addProductToCart = async (req,res)=>{
+
+   
+    const id= req.params.id;
+
+     if( !ObjectId.isValid(id) ||  ((String)(new ObjectId(id)) !== id)){
+                return res.status(400).send({message:"Invalid Object Id Passed"});
+    }
+
+    try{
+        const product = await Product.findById(req.params.id);
+
+        if(!product){
+            return res.status(404).send({message:"Product not found"});
+        }
+
+        
+        //check whether there exists a cart for this user or not 
+
+        const user =  req.user;
+
+        var cart  =  await Cart.findOne({userId:user._id});
+
+        console.log(cart);
+
+        if(!cart){
+
+            const cartyObj={
+                userId:user._id,
+                products:[id]
+            }
+
+            cart = await Cart.create(cartyObj);
+
+            return res.status(201).send(cart);
+        }else{
+
+            cart.products.push(id);
+
+            await cart.save();
+
+            return res.status(200).send(cart);
+        }
+    
+
+    }
+    catch(err){
+         console.log(err);
+        return res.status(500).send({message:"Internal Server Error"});
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
