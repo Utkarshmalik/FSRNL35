@@ -24,6 +24,8 @@ app.use(bodyParser.json());
 
 
 require("./src/Routes/auth.routes")(app);
+require("./src/Routes/movie.routes")(app);
+require("./src/Routes/theatre.routes")(app);
 
 
 app.listen(PORT,()=>{

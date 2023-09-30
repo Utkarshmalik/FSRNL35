@@ -11,7 +11,14 @@ const userStatus={
     rejected:"REJECTED"
 }
 
+const releaseStatus={
+    released:"RELEASED",
+    unreleased:"UNRELEASED",
+    blocked:"BLOCKED"
+}
+
 module.exports={
     userTypes,
-    userStatus
+    userStatus,
+    releaseStatus
 }

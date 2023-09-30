@@ -37,10 +37,10 @@ const verifyAdmin= async (req,res,next)=>{
 
         next();
 
-        console.log(user);
 
     }catch(err){
-       res.status(500).send({message:"Something went wrong"});
+
+       res.status(500).send({message:"Something went wrong"+err});
     }
 }
 
