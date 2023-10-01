@@ -69,7 +69,30 @@ const addMoviesToTheatre= async (req,res)=>{
     await savedTheatre.save();
 
     return res.status(200).send({message:"Movie Added successfully"});
+}
 
+
+const checkIfMovieRunningInTheatre = async (req,res)=>{ 
+
+    const {theatreId, movieId} = req.params;
+
+    const savedTheatre = await theatreModel.findById(theatreId);
+
+    if(!savedTheatre){
+        return res.status(400).send({message:"Theatre doesn't exists"});
+    }
+
+    const savedMovie = await movieModel.findById(movieId);
+
+    if(!savedMovie){
+        return res.status(400).send({message:"Movie doesn't exists"});
+    }
+    
+    const response = {
+        isRunning : savedTheatre.movies.includes(movieId)
+    }
+
+    return res.status(200).send(response);
 }
 
 
@@ -77,6 +100,7 @@ module.exports={
     createTheatre,
     getAllTheatres,
     getTheatreById,
-    addMoviesToTheatre
+    addMoviesToTheatre,
+    checkIfMovieRunningInTheatre
 }
 
